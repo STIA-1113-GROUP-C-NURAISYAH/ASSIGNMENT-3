@@ -1,0 +1,1480 @@
+//SITI NUR AISYAH BINTI ABDULLAH (286752)
+//TOPIC:EMPLOYEES
+//CODING
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class employees {
+	
+	public static void line() {
+		for (int i=0; i<93; i++) {
+			System.out.print ("_");
+		}
+		System.out.println(" ");
+	}
+	
+	private String id,name,workCode,monthOfpayment;
+	private float basicSalary,epf,socso,allowance,amountOfdeduction,netsalary;
+	private long ic;
+	private int hour,salaryPerhour;
+	
+	public static void userinfo() {
+		Scanner sc=new Scanner(System.in);
+		String code1="DPL45";
+		String code2="DCL51";
+		String code3="DP441";
+		String code;
+		System.out.println();
+		System.out.println ("Enter your name:");
+		String name=sc.nextLine();
+		System.out.println ("Enter your identification card number:");
+		long ic=sc.nextLong();
+		
+		System.out.println ("Enter the month of payslip you want:");
+		ArrayList<String> monthOfpayment = new ArrayList<>();
+    		for(int i = 0; i < 1; i++) {
+    			monthOfpayment.add(sc.next());
+			}
+				
+		System.out.println ("Enter your work code:");
+		String workCode=sc.next();
+		if (workCode==code1) {
+			code="DPL45";
+		}
+		else if (workCode==code2) {
+			code="DCL51";
+		}
+		else if (workCode==code3) {
+			code="DP441";
+		}
+		
+		System.out.println ("Enter your hour of work for this month:");
+		int hour=sc.nextInt();
+		System.out.println ("Enter your salary per hour:");
+		System.out.print ("RM");
+		int salaryPerhour=sc.nextInt();
+		System.out.println ("Enter your allowance");
+		System.out.print ("RM");
+		double allowance=sc.nextDouble();
+		
+		double basicSalary=(salaryPerhour*hour)+allowance;
+		double epf=0.1*basicSalary;
+		double socso=0.005*basicSalary;
+		double amountOfdeduction=epf+socso;
+		
+		double netsalary=basicSalary-amountOfdeduction;
+	
+		
+		System.out.println("*****************************************************************************************");
+		System.out.println("				PAYSLIP "+ monthOfpayment + ", 2021");
+		System.out.println("*****************************************************************************************");
+		System.out.println ("NAME: "+name + "					WORK CODE: "+workCode);
+		System.out.println ("NRIC NO: "+ic);
+		System.out.println ();
+		System.out.printf ("===EARNINGS===");
+		System.out.println ();
+		System.out.printf ("BASIC SALARY: RM%.2f",basicSalary);
+		System.out.println ();
+		System.out.printf ("ALLOWANCE: RM%.2f", allowance);
+		System.out.println ("\n");
+		System.out.printf ("===DEDUCTION===");
+		System.out.println ();
+		System.out.printf ("EPF: RM%.2f",epf);
+		System.out.println ();
+		System.out.printf ("SOCSO: RM%.2f",socso);
+		System.out.println ();
+		System.out.printf ("AMOUNT OF DEDUCTION: RM%.2f",amountOfdeduction);
+		System.out.println ();
+		System.out.println("*****************************************************************************************");
+		System.out.printf ("	NET SALARY: RM%.2f",netsalary);
+		System.out.println ();
+		System.out.println("*****************************************************************************************");
+	}
+	
+	public static void main(String[] args) {
+		
+		employees e=new employees();
+		
+		e.line();
+		System.out.println("|   TYPES OF LECTURER   |   PERMANENT LECTURER   |   CONTRACT LECTURER   |   PTFT LECTURER   |");
+		e.line();
+		System.out.println("|       WORK CODE       |          DPL45         |         DCL51         |       DPP441      |");
+		e.line();
+		System.out.println("|    SALARY PER HOUR    |         RM132.00       |        RM85.00        |       RM63.00     |");
+		e.line();
+		System.out.println("|       ALLOWANCE       |         RM900.00       |        RM800.00       |       RM0.00      |");
+		e.line();
+		e.userinfo();
+	}
+	
+}
+
+//OUTPUT
+
+_____________________________________________________________________________________________ 
+|   TYPES OF LECTURER   |   PERMANENT LECTURER   |   CONTRACT LECTURER   |   PTFT LECTURER   |
+_____________________________________________________________________________________________ 
+|       WORK CODE       |          DPL45         |         DCL51         |       DPP441      |
+_____________________________________________________________________________________________ 
+|    SALARY PER HOUR    |         RM132.00       |        RM85.00        |       RM63.00     |
+_____________________________________________________________________________________________ 
+|       ALLOWANCE       |         RM900.00       |        RM800.00       |       RM0.00      |
+_____________________________________________________________________________________________ 
+
+Enter your name:
+SYUKRI BIN YUSUF
+Enter your identification card number:
+567891234
+Enter the month of payslip you want:
+JANUARY
+Enter your work code:
+DCL51
+Enter your hour of work for this month:
+34
+Enter your salary per hour:
+RM85
+Enter your allowance
+RM800
+*****************************************************************************************
+				PAYSLIP [JANUARY], 2021
+*****************************************************************************************
+NAME: SYUKRI BIN YUSUF					WORK CODE: DCL51
+NRIC NO: 567891234
+
+===EARNINGS===
+BASIC SALARY: RM3690.00
+ALLOWANCE: RM800.00
+
+===DEDUCTION===
+EPF: RM369.00
+SOCSO: RM18.45
+AMOUNT OF DEDUCTION: RM387.45
+*****************************************************************************************
+	NET SALARY: RM3302.55
+*****************************************************************************************
+
+//NUR ALYA BINTI MOHD IZAZI (286814)
+//TOPIC: STUDENT
+//CODING
+
+import java.util.Scanner;
+public class student {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+	    int choice; double balanceFee; double collegeFee = 160.99; ; int sem; String nationality;
+		               
+		  
+		  String []national = {"Malaysia", "Foreigner"};
+		          
+		 
+		      System.out.println("Based on the info please key in your choice in the next question.");
+		      System.out.println("------------------------------------------------------- ");
+		      System.out.println(" For Malaysian please key in number 0 ");
+		      System.out.println(" For foreigner please key in number 1 ");
+		      System.out.println("------------------------------------------------------- ");
+		      System.out.println("Please key in your nationality : ");
+		      int number = scan .nextInt();
+		      System.out.println(national [number]);
+		    
+		   
+		             if (number==0){
+		        malaysian();
+		        
+		             }
+		             else if (number==1){
+		                 foreign();
+		                
+		                 
+		                 
+		             }
+	
+		  
+		 }
+		 public static void foreign() {
+		            Scanner scan= new Scanner(System.in);
+		            
+		       
+		            int number; int choice; double balanceFee; double collegeFee = 160.99; String nationality; String name; int sem;
+		            
+		  System.out.println("Welcome to UUM Portal.");
+		  System.out.println("Please make sure you complete all part.");
+		  System.out.println("---------PART 1---------");
+		  System.out.println("\nPlease key in your detail");
+		  System.out.println("Name: ");
+		  name = scan.nextLine();
+		                
+		                
+		                System.out.println("Semester: ");
+		  sem = scan.nextInt();
+		                
+		              
+		              System.out.println("Based on the info below please answer the next question.");
+		                   System.out.println("---------------------------------------------------------------------------------------------------------------------");
+		                   System.out.println("For foreigner/International Student you are given only one choice of residential college to choose:");
+		                   System.out.println("  OPTION 1 - SYED RESIDENTIAL COLLEGE");
+		                   System.out.println("NOTES: THE SYED RESIDENTIAL COLLEGE WILL CHARGE YOU THREE TIMES MORE THAN ZAIN RESIDENTIAL COLLEGE PRICE");
+		                   System.out.println("---------------------------------------------------------------------------------------------------------------------");  
+		                   System.out.println("Please key in your choice:");
+		                   choice = scan.nextInt();
+		                   
+		                   
+		                   
+			             balanceFee = (collegeFee*3);
+			             balanceFee = balanceFee;
+			             System.out.println("Your current balance fee is: " +balanceFee);
+			          
+			     		 System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+			     		
+		                
+		             System.out.println("---------PART II---------");
+		             System.out.println("Based on the info below please answer the next question.");
+		             System.out.println("-----------COCURICULUM MARK RANGE-----------");
+		             System.out.println("Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10");
+		             System.out.println("Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20");
+		             System.out.println("Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30");
+		             System.out.println("Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40");
+		             System.out.println("Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50");
+		             System.out.println("Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60");
+		             System.out.println("Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69");
+		             System.out.println("Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80");
+		             System.out.println("Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90");
+		             System.out.println("Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100");
+		System.out.println("Please key in the number based on the range of your total cocuriculum mark:");
+		                   number = scan.nextInt();   
+		       
+		                
+		        
+		                switch (number) {
+		                    case 1:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 0 TO 10");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 2:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 11 TO 20");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 3:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 21 TO 30");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 4:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 31 TO 40");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 5:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 41 TO 50");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 6:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 51 TO 60");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 7:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 61 TO 69");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 8:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 70 TO 80");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 9:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 81 TO 90");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 10:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 91 TO 100");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    default:
+		                        System.out.println("Please enter valid number");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                }
+		              
+		                if(number == 8 || number==9 || number==10){
+		                    balanceFee = (collegeFee*3);
+		                 balanceFee = (balanceFee*0.2);
+		        
+		              System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		                  
+		             
+		          System.out.println("--------------------------------------------------------------------");
+		          System.out.println();
+		          System.out.println("Student's Details");
+		          System.out.println("Name: \t \t \t \t \t" +name);
+		          System.out.println("Semester: \t \t \t \t" +sem);
+		          System.out.println("Nationality: \t \t \t\tForeigner ");
+		          System.out.println("College Residential choice: \t \t" +choice);
+		          System.out.println("Total Balance Fee: \t \t \tRM" +balanceFee);
+		          System.out.println();
+		          System.out.println("---------------------------------------------------------------------");
+		 }
+		                
+		 
+		 
+		                else {
+		                 balanceFee = (collegeFee*3);
+		              System.out.println("The balance fee that you need to pay is: " +balanceFee); 
+		              
+		              System.out.println("--------------------------------------------------------------------");
+		              System.out.println();
+		              System.out.println("Student's Details");
+		              System.out.println("Name: \t \t \t \t \t" +name);
+		              System.out.println("Semester: \t \t \t \t" +sem);
+		              System.out.println("Nationality: \t \t \t\tForeigner ");
+		              System.out.println("College Residential choice: \t \t" +choice);
+		              System.out.println("Total Balance Fee: \t \t \t" +balanceFee);
+		              System.out.println();
+		              System.out.println("---------------------------------------------------------------------");
+		                
+		                }
+		                }
+		 
+
+		        public static void malaysian(){
+		         int number; int choice;  double balanceFee = 0; double collegeFee = 160.99; int totalCocuMark = 0; String nationality; String name; int sem;
+		         Scanner scan = new Scanner(System.in);
+		         
+		  System.out.println("Welcome to UUM Portal.");
+		  System.out.println("Please make sure you complete all part.");
+		  System.out.println("---------PART 1---------");
+		  System.out.println("\nPlease key in your detail");
+		  System.out.println("Name: ");
+		  name = scan.nextLine();
+		                
+		                System.out.println("Semester: ");
+		                sem = scan.nextInt();
+		           
+		           System.out.println("Based on the info below please answer the next question.");
+		                System.out.println("---------------------------------------------------------------------------------------------------------------------");
+		                System.out.println("For Malaysian student you are given to choose your college residential based on the option given:                   ");
+		                System.out.println("  OPTION 1 - SYED RESIDENTIAL COLLEGE \nNotes: This option will charge three time more than option 2          ");
+		                System.out.println("  OPTION 2 - ZAIN RESIDENTIAL COLLEGE \t\tRM160.99                                                              ");
+		                System.out.println("---------------------------------------------------------------------------------------------------------------------");  
+		                System.out.println("Please key in your choice:");
+		                choice = scan.nextInt();
+		                
+		                
+		                if(choice != '1')
+		             {   
+		             balanceFee = (collegeFee);
+		             System.out.println("Your current balance fee is: " +balanceFee);
+		             }else if(choice =='1') {
+		              balanceFee = (collegeFee*3);
+		                 System.out.println("Your current balance fee is: " +balanceFee);
+		                 System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		             
+		             }
+		                
+		                System.out.println("---------PART II---------");
+		             System.out.println("Based on the info below please answer the next question.");
+		             System.out.println("-----------COCURICULUM MARK RANGE-----------");
+		System.out.println("Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10");
+		             System.out.println("Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20");
+		             System.out.println("Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30");
+		             System.out.println("Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40");
+		             System.out.println("Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50");
+		             System.out.println("Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60");
+		             System.out.println("Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69");
+		             System.out.println("Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80");
+		             System.out.println("Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90");
+		             System.out.println("Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100");
+		                System.out.println("Please key in the number based on the range of your total cocuriculum mark:");
+		             number = scan.nextInt();
+		           
+		                  
+		              switch (number) {
+		                 case 1:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 0 TO 10");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 2:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 11 TO 20");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 3:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 21 TO 30");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 4:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 31 TO 40");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 5:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 41 TO 50");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 6:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 51 TO 60");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 7:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 61 TO 69");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 8:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 70 TO 80");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 9:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 81 TO 90");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 10:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 91 TO 100");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 default:
+		                     System.out.println("Please enter valid number");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		              }
+		             
+		             
+		                      if(number ==8 || number==9 || number==10) {
+		                       balanceFee = (balanceFee*0.2);
+		                      }else {
+		                       balanceFee = balanceFee;
+		                    
+		                          System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		                      } 
+		                      
+		              System.out.println("--------------------------------------------------------------------");
+		              System.out.println();
+		              System.out.println("Student's Details");
+		              System.out.println("Name: \t \t \t \t \t" +name);
+		              System.out.println("Semester: \t \t \t \t" +sem);
+		              System.out.println("Nationality: \t \t \t\tMalaysia");
+		              System.out.println("College Residential choice: \t \t" +choice);
+		              System.out.println("Total Balance Fee: \t \t \t" +balanceFee);
+		              System.out.println();
+		              System.out.println("---------------------------------------------------------------------");
+		                      
+		                       }
+		                      
+		                       
+		                }
+                   
+//OUTPUT 
+
+Based on the info please key in your choice in the next question.
+------------------------------------------------------- 
+ For Malaysian please key in number 0 
+ For foreigner please key in number 1 
+------------------------------------------------------- 
+Please key in your nationality : 
+0
+Malaysia
+Welcome to UUM Portal.
+Please make sure you complete all part.
+---------PART 1---------
+
+Please key in your detail
+Name: 
+alya
+Semester: 
+2
+Based on the info below please answer the next question.
+---------------------------------------------------------------------------------------------------------------------
+For Malaysian student you are given to choose your college residential based on the option given:                   
+  OPTION 1 - SYED RESIDENTIAL COLLEGE 
+Notes: This option will charge three time more than option 2          
+  OPTION 2 - ZAIN RESIDENTIAL COLLEGE 		RM160.99                                                              
+---------------------------------------------------------------------------------------------------------------------
+Please key in your choice:
+1
+Your current balance fee is: 160.99
+---------PART II---------
+Based on the info below please answer the next question.
+-----------COCURICULUM MARK RANGE-----------
+Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10
+Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20
+Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30
+Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40
+Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50
+Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60
+Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69
+Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80
+Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90
+Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100
+Please key in the number based on the range of your total cocuriculum mark:
+9
+TOTAL COCURICULUM MARK FROM 81 TO 90
+Congratulation you have successfully receive 80% discount.
+The system will calculate your balance fee
+--------------------------------------------------------------------
+
+Student's Details
+Name: 	 	 	 	 	alya
+Semester: 	 	 	 	2
+Nationality: 	 	 		Malaysia
+College Residential choice: 	 	1
+Total Balance Fee: 	 	 	32.198
+
+---------------------------------------------------------------------
+
+//TANG WEI CHIANG (286841)
+//TOPIC: COURSE
+//CODING
+
+import java.util.Scanner;
+public class course {
+
+	private static Scanner sc;
+	//Main method
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		userinfo();
+		registeredcourse();
+		secondlevelcourse();
+		registrationconfirmation();
+	}
+	
+	//User info method
+	public static void userinfo() {
+		sc = new Scanner (System.in);
+		
+		System.out.println("Welcome!");
+		System.out.println("We would like to know your information.");
+		System.out.print("Enter your name: ");
+		String name = sc.nextLine();
+		System.out.print("Enter your id: ");
+		String id = sc.next();
+		System.out.print("Enter your semester: ");
+		String sem = sc.next();
+		System.out.println();
+		
+		String ui [][] = {{"Name\t: ", "ID\t: ", "Semester: "}, 
+						  {name, id, sem}};
+		
+		userINFO(ui);
+		System.out.println();
+	}
+	
+	public static void userINFO(String UI [][]) {
+		System.out.println("USER INFO:");
+		System.out.println(UI[0][0] + UI[1][0]);
+		System.out.println(UI[0][1] + UI[1][1]);
+		System.out.println(UI[0][2] + UI[1][2]);
+	}
+	
+	//Registered course method
+	public static void registeredcourse() {
+		sc = new Scanner (System.in);
+
+		System.out.print("REGISTERED COURSE:\n");
+		System.out.println("You've registered 3 courses in last semester");
+		System.out.println("These are the courses that you've registered.");
+		for (int i = 0; i < 60; i++) {
+			System.out.print("_");
+		}
+		System.out.println();
+		
+		int course [] = {1,2,3};
+		String cName [] = {"STIA1113", "STQS1023", "STQM1203"};
+		int t1 [] = {36,20,15};
+		int t2 [] = {36,20,15};
+		int cw [] = {18,16,14};
+		int totMark [] = {90,56,44};
+		double GPA [] = {4.00,2.33,1.33};
+		int attTime [] = {18,15,20};
+		int totAttTime = 20;
+
+		for(int i=0; i<course.length; i++) {
+			System.out.println("\nCourse " +course[i]+ "\t\t\t: " +cName[i]);
+			System.out.println("Test 1 Marks\t\t\t: " +t1[i]+ "%");
+			System.out.println("Test 2 Marks\t\t\t: " +t2[i]+ "%");
+			System.out.println("Coursework Marks\t\t: " +cw[i]+ "%");
+			System.out.println("Total Marks\t\t\t: " +totMark[i]+ "%");
+			System.out.printf("GPA\t\t\t\t: %.2f\n" ,GPA[i]);
+			System.out.println("Attended Times\t\t\t: " +attTime[i]);
+			System.out.println("Maximum Attended Times\t\t: " +totAttTime+ " days");
+			System.out.println("Attendance rate\t\t\t: " +((double) attTime[i] / totAttTime)*100+ "%");
+		}
+		
+		for (int i = 0; i < 60; i++) {
+			System.out.print("_");
+		}
+		System.out.println();
+	}
+
+	// Second level course registration method
+	public static void secondlevelcourse() {
+		sc = new Scanner (System.in);
+		
+		int minAttRate = 80;
+		double minGPA = 2.00;
+		String cName [] = {"STIA1113", "STQS1023", "STQM2103"};
+		String scdCName [] = {"STIA1123", "STQS1023", "STQM1203"};
+		int totAttTime = 20;
+		double GPA [] = {4.00,2.33,1.33};
+		double att1 = (double) 18 / totAttTime;
+      	double attRate1 = att1 * 100;
+      	double att2 = (double) 15 / totAttTime;
+      	double attRate2 = att2 * 100;
+      	double att3 = (double) 20 / totAttTime;
+      	double attRate3 = att3 * 100;
+		
+		System.out.println("Which second-level course you would like to register?");
+		System.out.println("Press:\n (1) STIA1123 \n (2) STID3113 \n (3) STQM2103");
+		System.out.print("Your answer: ");
+		int scdLvlCourse = chooseCourse();
+		System.out.println();
+		
+		while((!(scdLvlCourse == 1)) && (!(scdLvlCourse == 2)) && (!(scdLvlCourse == 3))){	
+			System.out.println("Invalid course.");
+			System.out.print("Please enter a valid number (1-3): ");
+			scdLvlCourse = sc.nextInt();
+			System.out.println();
+			}
+
+		if(scdLvlCourse == 1){
+			System.out.println(scdCName[0]+ " requirements: ");
+			System.out.println("Completed STIA1113 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[0]+ " GPA\t\t: %.2f\n" ,GPA[0]);
+			System.out.println(cName[0]+ " Attendance Rate: " +attRate1+ "%");
+			
+			if ((GPA[0]>=2.00) && (attRate1>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+	
+			else if ((GPA[0]>=2.00) && (attRate1<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+						+ "attendance rate, please retake the course.\n");
+			}
+	
+			else if ((GPA[0]<=1.99) && (attRate1>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+						+ "fulfilled GPA, please retake the course.\n");
+			}
+			
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+						+ "please retake the course.\n");
+			}
+		}
+		
+		else if(scdLvlCourse == 2){
+			System.out.println(scdCName[1]+ " requirements: ");
+			System.out.println("Completed STQS1023 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[1]+ " GPA\t\t: %.2f\n" ,GPA[1]);
+			System.out.println(cName[1]+ " Attendance Rate: " +attRate2+ "%");
+			
+			if ((GPA[1]>=2.00) && (attRate2>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+		
+			else if ((GPA[1]>=2.00) && (attRate2<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+							+ "attendance rate, please retake the course.\n");
+			}
+		
+			else if ((GPA[1]<=1.99) && (attRate2>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+							+ "fulfilled GPA, please retake the course.\n");
+			}
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+							+ "please retake the course.\n");
+			}
+		}
+		
+		else if(scdLvlCourse == 3){
+			System.out.println(scdCName[2]+ " requirements: ");
+			System.out.println("Completed STQM1203 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[2]+ " GPA\t\t: %.2f\n" ,GPA[2]);
+			System.out.println(cName[2]+ " Attendance Rate: " +attRate3+ "%");
+			
+			if ((GPA[2]>=2.00) && (attRate3>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+		
+			else if ((GPA[2]>=2.00) && (attRate3<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+							+ "attendance rate, please retake the course.\n");
+			}
+		
+			else if ((GPA[2]<=1.99) && (attRate3>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+							+ "fulfilled GPA, please retake the course.\n");
+			}
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+							+ "please retake the course.\n");
+			}
+		}	
+	}
+	
+	public static int chooseCourse() {
+		sc = new Scanner (System.in);
+		int scdLvlCourse = sc.nextInt();
+		return scdLvlCourse;
+	}
+	
+	// Registration confirmation
+	public static void registrationconfirmation() {
+		sc = new Scanner (System.in);
+		
+		String answer = " ";
+		do {
+		System.out.print("\nDo you wish to register another course? (Y/N): ");
+		answer = sc.next();
+		System.out.println();
+			if ((answer.equals("y")) || (answer.equals("Y"))) {
+				secondlevelcourse();
+			} 
+		
+			else {
+				System.out.println("Thanks for using the system.");
+			}
+		}
+		while ((answer.equals("y")) || (answer.equals("Y")));	
+	}
+}
+
+//OUTPUT
+
+Welcome!
+We would like to know your information.
+Enter your name: TANG WEI CHIANG
+Enter your id: 286841
+Enter your semester: 2
+
+USER INFO:
+Name	: TANG WEI CHIANG
+ID	: 286841
+Semester: 2
+
+REGISTERED COURSE:
+You've registered 3 courses in last semester
+These are the courses that you've registered.
+____________________________________________________________
+
+Course 1			: STIA1113
+Test 1 Marks			: 36%
+Test 2 Marks			: 36%
+Coursework Marks		: 18%
+Total Marks			: 90%
+GPA				: 4.00
+Attended Times			: 18
+Maximum Attended Times		: 20 days
+Attendance rate			: 90.0%
+
+Course 2			: STQS1023
+Test 1 Marks			: 20%
+Test 2 Marks			: 20%
+Coursework Marks		: 16%
+Total Marks			: 56%
+GPA				: 2.33
+Attended Times			: 15
+Maximum Attended Times		: 20 days
+Attendance rate			: 75.0%
+
+Course 3			: STQM1203
+Test 1 Marks			: 15%
+Test 2 Marks			: 15%
+Coursework Marks		: 14%
+Total Marks			: 44%
+GPA				: 1.33
+Attended Times			: 20
+Maximum Attended Times		: 20 days
+Attendance rate			: 100.0%
+____________________________________________________________
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: 0
+
+Invalid course.
+Please enter a valid number (1-3): 1
+
+STIA1123 requirements: 
+Completed STIA1113 with GPA 2.00 and attendance rate 80% or above.
+
+STIA1113 GPA		: 4.00
+STIA1113 Attendance Rate: 90.0%
+You've passed the GPA and attendance rate requirements.
+STIA1123 registered successfully!
+
+Do you wish to register another course? (Y/N): y
+
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: 5
+
+Invalid course.
+Please enter a valid number (1-3): 2
+
+STQS1023 requirements: 
+Completed STQS1023 with GPA 2.00 and attendance rate 80% or above.
+
+STQS1023 GPA		: 2.33
+STQS1023 Attendance Rate: 75.0%
+You've passed the GPA requirement but failed to fulfilled attendance rate, please retake the course.
+
+Do you wish to register another course? (Y/N): Y
+
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: -1
+
+Invalid course.
+Please enter a valid number (1-3): 3
+
+STQM1203 requirements: 
+Completed STQM1203 with GPA 2.00 and attendance rate 80% or above.
+
+STQM2103 GPA		: 1.33
+STQM2103 Attendance Rate: 100.0%
+You've passed the attendance rate requirement but failed to fulfilled GPA, please retake the course.
+
+Do you wish to register another course? (Y/N): n
+
+Thanks for using the system.
+
+//FARA AYEESHA BINTI AHMAD YUSNI (286941)
+//TOPIC: LIBRARY
+//CODING
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class library {
+
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+
+  Scanner sc = new Scanner(System.in);
+  
+  int yearCode;
+  float totalFine;
+  char excuse;
+  float discountedFine = 0;
+  int numBooks;
+  String excuseDesc;
+  float bookFine;
+  float sum = 0;
+  
+  String [] a;
+  a = studentInfo();
+  
+  yearCode = Integer.parseInt(a[2]);
+  
+  System.out.println("Does the student have a valid excuse? Enter y or n");
+  excuse = sc.next().charAt(0);
+  sc.nextLine();
+  
+  if (excuse == 'y') {
+   System.out.println("Enter student's excuse. ");
+   excuseDesc = sc.next();
+   sc.nextLine();
+  }
+  else
+   System.out.println();
+  
+  System.out.println("Enter number of books late: ");
+  numBooks = sc.nextInt();
+  sc.nextLine();
+  
+  String b[][];
+  b = bookinfo(numBooks);
+  
+  int bookfee [][] = new int [100][];
+  for (int i = 0; i < numBooks; i++) {
+   bookfee[i] = new int [1];
+   bookfee[i][0] = Integer.parseInt(b[i][2]);
+  }
+  
+  System.out.println();
+  
+  System.out.println("=============================================================");
+  System.out.println();
+  System.out.println("*Student Info");
+  
+  System.out.println("Student's name: " + a[0]);
+  System.out.println("Student's ID: " + a[1]);
+  System.out.println("Student's year of study: " + a[2]);
+  System.out.println();
+
+  System.out.println("*************************************************************");
+  System.out.println("*Book Info");
+  
+  for (int i = 0; i < numBooks; i++) {
+   System.out.println("Book " + (i + 1) + " title: " + b[i][0]);
+   System.out.println("Book " + (i + 1) + " ISBN: " + b[i][1]);
+   System.out.println("Number of days late for book " + (i + 1) + " : " + b[i][2]);
+   System.out.printf("Fee for this book: RM" + "%.2f",(float)bookfee[i][0] * (float)yearCode);
+   System.out.println();
+   System.out.println();
+  }
+  
+  for (int i = 0; i < numBooks; i++) {
+   bookFine = bookfee[i][0] * yearCode;
+   sum = sum + bookFine;
+  }
+  
+  if (excuse == 'y') {
+   totalFine = sum;
+   discountedFine = (float) (totalFine * 0.8);
+  }
+  else
+   totalFine = sum;
+  System.out.println();
+  
+  if (excuse == 'y') {
+   System.out.printf("Total fee is: RM" + "%.2f",discountedFine);
+  }
+  else
+   System.out.printf("Total fee is: RM" + "%.2f",totalFine);
+  
+  System.out.println();
+  System.out.println("*************************************************************");
+  System.out.println();
+  System.out.println("=============================================================");
+
+ }
+ 
+ public static String[] studentInfo () {
+  Scanner sc = new Scanner (System.in);
+  String [] studentinfo = new String [3];
+  
+  System.out.println("Enter student's name, ID, and year of study(separated by ENTER key): ");
+  
+  for (int i = 0; i < studentinfo.length; i++) {
+   studentinfo[i] = sc.nextLine();
+  }
+  return studentinfo;
+ }
+ 
+ public static String[][] bookinfo (int x) {
+  Scanner sc = new Scanner (System.in);
+  String [][] bookinfo = new String [100][];
+  for (int i = 0; i < x; i++) {
+   bookinfo[i] = new String [3];
+   System.out.println("Enter book title, book ISBN, and number of days late of book " + (i + 1) + " (separated by ENTER key)");
+   for (int j = 0; j < bookinfo[i].length; j++) {
+    bookinfo[i][j] = sc.nextLine();
+   }
+  }
+  return bookinfo;
+ }
+
+}
+
+//OUTPUT
+
+Enter student's name, ID, and year of study(separated by ENTER key): 
+Eri
+283948
+3
+Does the student have a valid excuse? Enter y or n
+n
+
+Enter number of books late: 
+3
+Enter book title, book ISBN, and number of days late of book 1 (separated by ENTER key)
+Girl A
+475819375839
+7
+Enter book title, book ISBN, and number of days late of book 2 (separated by ENTER key)
+Hayloft II
+273847184758
+5
+Enter book title, book ISBN, and number of days late of book 3 (separated by ENTER key)
+Alien Blues
+284718495728
+10
+
+=============================================================
+
+*Student Info
+Student's name: Eri
+Student's ID: 283948
+Student's year of study: 3
+
+*************************************************************
+*Book Info
+Book 1 title: Girl A
+Book 1 ISBN: 475819375839
+Number of days late for book 1 : 7
+Fee for this book: RM21.00
+
+Book 2 title: Hayloft II
+Book 2 ISBN: 273847184758
+Number of days late for book 2 : 5
+Fee for this book: RM15.00
+
+Book 3 title: Alien Blues
+Book 3 ISBN: 284718495728
+Number of days late for book 3 : 10
+Fee for this book: RM30.00
+
+
+Total fee is: RM66.00
+*************************************************************
+
+=============================================================
+
+//NIK MOHAMAD HANIS BIN NIK YAHYA (286961)
+//TOPIC: MEDICAL
+//CODING
+
+import java.util.Scanner;
+
+public class medical {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner (System.in);
+		
+        double anxiety = 25.0;
+        double depression = 32.0;
+        double aCom = 2.25;
+        double aAcc = 1.50;
+        double dLaw = 3.52;
+        double dCom = 2.88;
+        
+        double computingA;
+        double accountA;
+        
+        double nlawD ;
+        double ncomputingA;
+        double ncomputingD;
+        double naccountA;
+
+        double lawD;
+        double computingD;
+        
+        System.out.println("This program will help you to calculate number of students of different school");
+        System.out.println("");
+        System.out.println("Based on the survey: ");
+        System.out.println("                    -Anxiety test    = " + anxiety + "%");
+        System.out.println("                    -Depression test = " + depression + "%");
+        System.out.println("                    -Anxiety test (School of Computing)     = " + aCom + "%");
+        System.out.println("                    -Anxiety test (School of Accounting)    = " + aAcc + "0%");
+        System.out.println("                    -Depression test (School of Law)        = " + dLaw + "%");
+        System.out.println("                    -Depression test (School of Computing)  = " + dCom + "%");
+        System.out.println("");
+        
+        System.out.print("Enter percentage of students have anxiety in School of Computing  = ");
+        computingA = sc.nextDouble();
+        System.out.print("Enter percentage of students have anxiety in School of Accounting = ");
+        accountA = sc.nextDouble();
+        System.out.println("");
+        
+        System.out.println("Percentage of students in School of Computing who have anxiety  = " + computingA + "%");
+        ncomputingA = (computingA/25) * 100;
+        System.out.println("Percentage of students in School of Accounting who have anxiety = " + accountA + "0%");
+        naccountA = (accountA/25) * 100;
+        
+        double nlb = 25 - (ncomputingA+naccountA)  ;
+        double nlawA = nlb/2 ;
+        double nbusinessA = nlb/2 ;
+        double lbpercent = (nlawA * 25) / 100 ;
+        
+        System.out.println("Percentage of students in School of Law who have anxiety        = " + lbpercent + "%");
+        System.out.println("Percentage of students in School of Business who have anxiety   = " + lbpercent + "%");
+        System.out.println("");
+        
+        System.out.print("Enter percentage of students have depression in School of Law       = ");
+        lawD = sc.nextDouble();
+        System.out.print("Enter percentage of students have depression in School of Computing = ");
+        computingD = sc.nextDouble();
+        System.out.println("");
+        
+        System.out.println("Percentage of students in School of Law who have depression          = " + lawD + "%");
+        nlawD = (lawD/32) * 100;
+        System.out.println("Percentage of students in School of Computing who have depression    = " + computingD + "%");
+        ncomputingD = (computingD/32) * 100;
+        
+        double nba = 32 - (nlawD+ncomputingD)  ;
+        double nbusinessD = nba/2 ;
+        double naccountD = nba/2 ;
+        double bapercent = (naccountD * 32) / 100 ;
+        
+        int a = (int) nlawA;
+        int b = (int) ncomputingA;
+        int c = (int) nbusinessA;
+        int d = (int) naccountA;
+        
+        int e = (int) nlawD;
+        int f = (int) ncomputingD;
+        int g = (int) nbusinessD;
+        int h = (int) naccountD;
+        
+        int aM =  0;
+        int bF =  6;
+        int cM =  1;
+        int dF =  4;
+        int eM =  4;
+        int fF =  5;
+        int gM =  2;
+        int hF =  3;
+        
+        int aF = a - 0;
+        int bM = b - 6;
+        int cF = c - 1;
+        int dM = d - 4;
+        
+        int eF = e - 4;
+        int fM = f - 5;
+        int gF = g - 2;
+        int hM = h - 3;
+        
+        System.out.println("Percentage of students in School of Business who have depression     = " + bapercent + "%");
+        System.out.println("Percentage of students in School of Accounting who have depression   = " + bapercent + "%");
+        System.out.println("");
+        
+        System.out.println("Here is the result : ");
+        System.out.println(" ");
+        System.out.println("Anxiety Test");
+        System.out.println(" ");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        System.out.println("|        School        |" + "| Percentage of students(%) |" + "| Total Number of students |" + "| Female students |" + "| Male students |");
+        System.out.println("|     School of Law    |" + "|            " + lbpercent +  "           |" + "|            "+   a +"             |" + "|        "+   aF +"        |" + "|        "+   aM +"      |");
+        System.out.println("|  School of Computing |" + "|            " + computingA + "           |" + "|            "+   b +"             |" + "|        "+   bF +"        |" + "|        "+   bM +"      |");
+        System.out.println("|  School of Business  |" + "|            " + lbpercent +  "           |" + "|            "+   c +"             |" + "|        "+   cF +"        |" + "|        "+   cM +"      |");
+        System.out.println("| School of Accounting |" + "|            " + accountA +   "            |" + "|            "+   d +"             |" + "|        "+   dF +"        |" + "|        "+   dM +"      |");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        
+        System.out.println(" ");
+        System.out.println("Depression Test");
+        System.out.println(" ");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        System.out.println("|        School        |" + "| Percentage of students(%) |" + "| Total Number of students |" + "| Female students |" + "| Male students |");
+        System.out.println("|     School of Law    |" + "|            " + lawD +  "           |" + "|            "+   e +"            |" + "|        "+   eF +"        |" + "|        "+   eM +"      |");
+        System.out.println("|  School of Computing |" + "|            " + computingD + "           |" + "|            "+   f +"             |" + "|        "+   fF +"        |" + "|        "+   fM +"      |");
+        System.out.println("|  School of Business  |" + "|            " + bapercent +  "           |" + "|            "+   g +"             |" + "|        "+   gF +"        |" + "|        "+   gM +"      |");
+        System.out.println("| School of Accounting |" + "|            " + bapercent +   "           |" + "|            "+   h +"             |" + "|        "+   hF +"        |" + "|        "+   hM +"      |");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        
+        System.out.println("Data below show the level of anxiety and depression of a student");
+        System.out.println("Anxiety level    : ");
+        System.out.println("                 0-5   -> minimal anxiety");
+        System.out.println("                 6-10  -> moderate anxiety");
+        System.out.println("                 11-20 -> severe anxiety");
+        System.out.println();
+        System.out.println("Depression level : ");
+        System.out.println("                 1-6   -> minimal depression");
+        System.out.println("                 7-12  -> moderate depression");
+        System.out.println("                 13-20 -> severe depression");
+        System.out.println();
+        System.out.println("Based on the table:");
+        StudentAnxiety();
+        passArraytomethodA.mainA(args); 
+        System.out.println();
+	    StudentDepress();
+	    passArraytomethodD.mainD(args);
+	}
+	
+        public int maxA(int [] array) {
+		      int maxA = 0;
+		      for(int i=0; i<array.length; i++ ) {
+		         if(array[i]>maxA) {
+		            maxA = array[i];
+		         }
+		      }
+		      return maxA;
+		   }
+
+        
+		public int minA(int [] array) {
+		      int minA = array[0];
+		   
+		      for(int i = 0; i<array.length; i++ ) {
+		         if(array[i]<minA) {
+		            minA = array[i];
+		         }
+		      }
+		      return minA;
+		   }
+
+		   
+		public class passArraytomethodA {
+		public static void mainA (String args[]) {
+			
+		      Scanner sc = new Scanner (System.in);
+		      int minAB = 0;
+	          int modAB = 0;
+	          int sevAB = 0;
+		      System.out.print("Enter total number of students who have anxiety : ");
+		      int size = sc.nextInt();
+		      int[] myArray = new int[size];
+		      System.out.println("Enter their score : ");
+
+		      for(int i=0; i<size; i++) {
+		    	 System.out.print("Result for the " + (i + 1) + " student (0-20) = ");
+		         myArray[i] = sc.nextInt();
+		         
+		         if (myArray[i] <= 5) {
+		        	 minAB += 1;
+	        	     }
+	            else if (myArray[i] <= 10 ) {
+	            	 modAB += 1;}
+	            else {
+	            	 sevAB += 1;}
+		      }
+		      
+		      medical m = new medical();
+		      System.out.println();
+			  System.out.println(minAB + "/" + "5 students in School of Business has minimal anxiety");
+			  System.out.println(modAB + "/" + "5 students in School of Business has moderate anxiety");
+			  System.out.println(sevAB + "/" + "5 students in School of Business has severe anxiety");
+			  System.out.println();
+		      System.out.println("The largest score : "+ m.maxA(myArray));
+		      System.out.println("The lowest score  : "+ m.minA(myArray));
+
+		    }
+
+        }
+		
+		 
+	        public int maxD(int [] array) {
+			      int maxD = 0;
+
+			      for(int i=0; i<array.length; i++ ) {
+			         if(array[i]>maxD) {
+			            maxD = array[i];
+			         }
+			      }
+			      return maxD;
+			   }
+
+			public int minD(int [] array) {
+			      int minD = array[0];
+			   
+			      for(int i = 0; i<array.length; i++ ) {
+			         if(array[i]<minD) {
+			            minD = array[i];
+			         }
+			      }
+			      return minD;
+			   }
+
+			 public class passArraytomethodD {
+			 public static void mainD (String args[]) {
+			      Scanner sc = new Scanner (System.in);
+				
+			      int minDB = 0;
+		          int modDB = 0;
+		          int sevDB = 0;
+			      System.out.print("Enter total number of students who have depression : ");
+			      int size = sc.nextInt();
+			      int[] myArray = new int[size];
+			      System.out.println("Enter their score : ");
+
+			      for(int i=0; i<size; i++) {
+			    	 System.out.print("Result for the " + (i + 1) + " student (0-20) = ");
+			         myArray[i] = sc.nextInt();
+			         
+			         if (myArray[i] <= 6) {
+			        	 minDB += 1;
+		        	     }
+		            else if (myArray[i] <= 12 ) {
+		            	 modDB += 1;}
+		            else {
+		            	 sevDB += 1;}
+			      }
+			      
+			      
+			      medical m = new medical();
+			      System.out.println();
+				  System.out.println(minDB + "/" + "6 students in School of Business has minimal depression");
+				  System.out.println(modDB + "/" + "6 students in School of Business has moderate depression");
+				  System.out.println(sevDB + "/" + "6 students in School of Business has severe depression");
+				  System.out.println();
+			      System.out.println("The largest score : "+ m.maxD(myArray));
+			      System.out.println("The lowest score  : "+ m.minD(myArray));
+
+			   }
+
+		}    
+        
+
+	    public static void StudentAnxiety() {
+			String[][] Business = {{"Nabila", "Ching Mei", "Siti", "Kasim", "Printhaa"},
+							       {"11", "4", "5", "3", "7"}};
+
+			
+			System.out.println("Here are result for students in School of Business in anxiety test");
+			System.out.println();
+
+			System.out.println("1.Score for " + Business[0][0] + ".....= " + Business[1][0]);
+			System.out.println("2.Score for " + Business[0][1] + "..= " + Business[1][1]);
+			System.out.println("3.Score for " + Business[0][2] + ".......= " + Business[1][2]);
+			System.out.println("4.Score for " + Business[0][3] + "......= " + Business[1][3]);
+			System.out.println("5.Score for " + Business[0][4] + "...= " + Business[1][4]);
+			System.out.println();
+
+			
+			}
+
+	    public static void StudentDepress() {
+			String[][] Business = {{"Aisyah", "Theva", "Sarah", "Kamal", "Aiman", "Mei ying"},
+							       {"10", "11", "7", "5", "3", "2"}};
+
+			
+			System.out.println("Here are result for students in School of Business in depression test");
+			System.out.println();
+
+			System.out.println("1.Score for " + Business[0][0] + ".....= " + Business[1][0]);
+			System.out.println("2.Score for " + Business[0][1] + "......= " + Business[1][1]);
+			System.out.println("3.Score for " + Business[0][2] + "......= " + Business[1][2]);
+			System.out.println("4.Score for " + Business[0][3] + "......= " + Business[1][3]);
+			System.out.println("5.Score for " + Business[0][4] + "......= " + Business[1][4]);
+			System.out.println("6.Score for " + Business[0][5] + "...= " + Business[1][5]);
+			System.out.println();
+
+}
+	    }
+      
+//OUTPUT
+
+This program will help you to calculate number of students of different school
+
+Based on the survey: 
+                    -Anxiety test    = 25.0%
+                    -Depression test = 32.0%
+                    -Anxiety test (School of Computing)     = 2.25%
+                    -Anxiety test (School of Accounting)    = 1.50%
+                    -Depression test (School of Law)        = 3.52%
+                    -Depression test (School of Computing)  = 2.88%
+
+Enter percentage of students have anxiety in School of Computing  = 2.25
+Enter percentage of students have anxiety in School of Accounting = 1.5
+
+Percentage of students in School of Computing who have anxiety  = 2.25%
+Percentage of students in School of Accounting who have anxiety = 1.50%
+Percentage of students in School of Law who have anxiety        = 1.25%
+Percentage of students in School of Business who have anxiety   = 1.25%
+
+Enter percentage of students have depression in School of Law       = 3.52
+Enter percentage of students have depression in School of Computing = 2.88
+
+Percentage of students in School of Law who have depression          = 3.52%
+Percentage of students in School of Computing who have depression    = 2.88%
+Percentage of students in School of Business who have depression     = 1.92%
+Percentage of students in School of Accounting who have depression   = 1.92%
+
+Here is the result : 
+ 
+Anxiety Test
+ 
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+|        School        || Percentage of students(%) || Total Number of students || Female students || Male students |
+|     School of Law    ||            1.25           ||            5             ||        5        ||        0      |
+|  School of Computing ||            2.25           ||            9             ||        6        ||        3      |
+|  School of Business  ||            1.25           ||            5             ||        4        ||        1      |
+| School of Accounting ||            1.5            ||            6             ||        4        ||        2      |
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+ 
+Depression Test
+ 
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+|        School        || Percentage of students(%) || Total Number of students || Female students || Male students |
+|     School of Law    ||            3.52           ||            11            ||        7        ||        4      |
+|  School of Computing ||            2.88           ||            9             ||        5        ||        4      |
+|  School of Business  ||            1.92           ||            6             ||        4        ||        2      |
+| School of Accounting ||            1.92           ||            6             ||        3        ||        3      |
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+Data below show the level of anxiety and depression of a student
+Anxiety level    : 
+                 0-5   -> minimal anxiety
+                 6-10  -> moderate anxiety
+                 11-20 -> severe anxiety
+
+Depression level : 
+                 1-6   -> minimal depression
+                 7-12  -> moderate depression
+                 13-20 -> severe depression
+
+Based on the table:
+Here are result for students in School of Business in anxiety test
+
+1.Score for Nabila.....= 11
+2.Score for Ching Mei..= 4
+3.Score for Siti.......= 5
+4.Score for Kasim......= 3
+5.Score for Printhaa...= 7
+
+Enter total number of students who have anxiety : 5
+Enter their score : 
+Result for the 1 student (0-20) = 11
+Result for the 2 student (0-20) = 4
+Result for the 3 student (0-20) = 5
+Result for the 4 student (0-20) = 3
+Result for the 5 student (0-20) = 7
+
+3/5 students in School of Business has minimal anxiety
+1/5 students in School of Business has moderate anxiety
+1/5 students in School of Business has severe anxiety
+
+The largest score : 11
+The lowest score  : 3
+
+Here are result for students in School of Business in depression test
+
+1.Score for Aisyah.....= 10
+2.Score for Theva......= 11
+3.Score for Sarah......= 7
+4.Score for Kamal......= 5
+5.Score for Aiman......= 3
+6.Score for Mei ying...= 2
+
+Enter total number of students who have depression : 6
+Enter their score : 
+Result for the 1 student (0-20) = 10
+Result for the 2 student (0-20) = 11
+Result for the 3 student (0-20) = 7
+Result for the 4 student (0-20) = 5
+Result for the 5 student (0-20) = 3
+Result for the 6 student (0-20) = 2
+
+3/6 students in School of Business has minimal depression
+3/6 students in School of Business has moderate depression
+0/6 students in School of Business has severe depression
+
+The largest score : 11
+The lowest score  : 2
